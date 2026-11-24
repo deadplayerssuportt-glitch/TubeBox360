@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- mbedtls360: libreria estatica con mbedTLS 2.28.8 (Apache-2.0, ver LICENSE)
+     recortada a un cliente TLS 1.2 para TubeBox360. La configuracion esta en
+     include\mbedtls\config.h. Los .c de library\ traen parches minimos para
+     el compilador C89 de VS2010 (ver PARCHES.txt). -->
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Xbox 360">
+      <Configuration>Debug</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Xbox 360">
+      <Configuration>Release</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6B1E3C52-8F4A-4D2B-9C7E-3A5F21D0B7E4}</ProjectGuid>
+    <RootNamespace>mbedtls360</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)compat;$(ProjectDir)library</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>XBOX;_XBOX;_LIB;_DEBUG;DEBUG</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4244;4018;4996;4146;4005</DisableSpecificWarnings>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)compat;$(ProjectDir)library</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>XBOX;_XBOX;_LIB;NDEBUG</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4244;4018;4996;4146;4005</DisableSpecificWarnings>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="library\aes.c" />
+    <ClCompile Include="library\asn1parse.c" />
+    <ClCompile Include="library\asn1write.c" />
+    <ClCompile Include="library\base64.c" />
+    <ClCompile Include="library\bignum.c" />
+    <ClCompile Include="library\chacha20.c" />
+    <ClCompile Include="library\chachapoly.c" />
+    <ClCompile Include="library\cipher.c" />
+    <ClCompile Include="library\cipher_wrap.c" />
+    <ClCompile Include="library\constant_time.c" />
+    <ClCompile Include="library\ecdh.c" />
+    <ClCompile Include="library\ecdsa.c" />
+    <ClCompile Include="library\ecp.c" />
+    <ClCompile Include="library\ecp_curves.c" />
+    <ClCompile Include="library\error.c" />
+    <ClCompile Include="library\gcm.c" />
+    <ClCompile Include="library\md.c" />
+    <ClCompile Include="library\oid.c" />
+    <ClCompile Include="library\pem.c" />
+    <ClCompile Include="library\pk.c" />
+    <ClCompile Include="library\pk_wrap.c" />
+    <ClCompile Include="library\pkparse.c" />
+    <ClCompile Include="library\platform.c" />
+    <ClCompile Include="library\platform_util.c" />
+    <ClCompile Include="library\poly1305.c" />
+    <ClCompile Include="library\rsa.c" />
+    <ClCompile Include="library\rsa_internal.c" />
+    <ClCompile Include="library\sha1.c" />
+    <ClCompile Include="library\sha256.c" />
+    <ClCompile Include="library\sha512.c" />
+    <ClCompile Include="library\ssl_ciphersuites.c" />
+    <ClCompile Include="library\ssl_cli.c" />
+    <ClCompile Include="library\ssl_msg.c" />
+    <ClCompile Include="library\ssl_tls.c" />
+    <ClCompile Include="library\x509.c" />
+    <ClCompile Include="library\x509_crt.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\mbedtls\config.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
