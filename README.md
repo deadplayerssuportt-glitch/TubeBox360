@@ -48,7 +48,8 @@ Estructura:
 
 | Carpeta | Qué es |
 |---|---|
-| `TubeBox360/` | Código de la app |
+| `TubeBox360.sln` | Solución de Visual Studio 2010 |
+| `TubeBox360/` | Código de la app y `TubeBox360.vcxproj` |
 | `mbedtls360/` | mbedTLS 2.28.8 adaptado a C89 / Xbox 360 (librería estática) — ver `mbedtls360/PARCHES.txt` |
 | `ffaac/` | Envoltura del decodificador AAC de FFmpeg (librería estática) |
 | `tools/` | Scripts de Python que generan `ui_assets.c`, `lang_tab.h`, `font_extra.c` y `tls_roots.c` (no van en Visual Studio) |
@@ -57,10 +58,9 @@ Estructura:
 Pasos:
 
 1. Descarga **ffmpeg360** (el port de FFmpeg para Xbox 360 de **HG-ERIK**) y ponlo al lado de estas carpetas como `ffmpeg360/` (lo usa `ffaac`).
-2. Crea la solución con los proyectos `TubeBox360`, `mbedtls360` y `ffaac`, y agrega a `TubeBox360` todos los `.c`, `.cpp` y `.h` de su carpeta.
-3. En `TubeBox360` → *C/C++ → Additional Include Directories*: `..\mbedtls360\include;..\mbedtls360\compat`.
-4. Referencias: `mbedtls360` y `ffaac` (*References → Add New Reference*).
-5. Configuración **Release**; el `.xex` resultante se copia a la consola como `default.xex`.
+2. Abre **`TubeBox360.sln`** en Visual Studio 2010 (ya trae los proyectos `TubeBox360`, `mbedtls360` y `ffaac` con sus referencias).
+3. Elige la configuración **Release | Xbox 360** y haz **Build → Rebuild Solution**.
+4. Copia el `.xex` resultante a la consola como `default.xex`.
 
 ### Servicios opcionales (`TubeBox360/version.h`)
 
