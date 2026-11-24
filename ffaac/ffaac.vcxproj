@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ffaac: libreria estatica con SOLO el decodificador AAC de FFmpeg (ffmpeg360,
+     LGPL 2.1+) mas aac.c, la envoltura propia de TubeBox360. -->
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Xbox 360">
+      <Configuration>Debug</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Xbox 360">
+      <Configuration>Release</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FDA0E7F2-D5B4-441F-B70C-7B725000339A}</ProjectGuid>
+    <RootNamespace>ffaac</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\ffmpeg360;..\ffmpeg360\vcproj\external\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>XBOX;_XBOX;_LIB;HAVE_AV_CONFIG_H;_DEBUG;DEBUG</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4305;4244;4018;4996</DisableSpecificWarnings>
+      <ForcedIncludeFiles>libavutil/intmath.h;config.h</ForcedIncludeFiles>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\ffmpeg360;..\ffmpeg360\vcproj\external\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>XBOX;_XBOX;_LIB;HAVE_AV_CONFIG_H;NDEBUG</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4305;4244;4018;4996</DisableSpecificWarnings>
+      <ForcedIncludeFiles>libavutil/intmath.h;config.h</ForcedIncludeFiles>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ffmpeg360\libavcodec\aacdec.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\aactab.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\aacsbr.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\aacps.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\mdct.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\fft.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\kbdwin.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\sinewin.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\utils.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\dsputil.c" />
+    <ClCompile Include="..\ffmpeg360\libavutil\mem.c" />
+    <ClCompile Include="..\ffmpeg360\libavutil\log.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\bitstream.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\fmtconvert.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\mpeg4audio.c" />
+    <ClCompile Include="..\ffmpeg360\libavutil\mathematics.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\avpacket.c" />
+    <ClCompile Include="..\ffmpeg360\libavutil\rational.c" />
+    <ClCompile Include="..\ffmpeg360\libavutil\audioconvert.c" />
+    <ClCompile Include="..\ffmpeg360\libavcodec\aacadtsdec.c" />
+    <ClCompile Include="aac.c" />
+    <ClCompile Include="ffstubs.c" />
+    <ClCompile Include="ffstubs_ctx.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aac.h" />
+    <ClInclude Include="config.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
