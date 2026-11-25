@@ -17,8 +17,10 @@ Reproduce video H.264 con el decodificador por hardware de la consola y se conec
 
 ## Funciones
 
-- **Inicio, búsqueda (40 resultados), Gaming, Música, Noticias, Deportes e Historial** en cuadrícula de tarjetas, estilo YouTube TV.
+- **Inicio, búsqueda (50 resultados), Gaming, Música, Noticias, Deportes e Historial** en cuadrícula de tarjetas, estilo YouTube TV.
 - **Reproductor propio**: hasta **1080p30 / 720p60** con el decodificador H.264 de la GPU, audio AAC, adelantar/retroceder, cola de "siguiente video".
+- **Videos en vivo** (HLS): se ven cerca del final de la transmisión, con cambio de calidad.
+- **Pantalla 16:9 o 4:3** (tele cuadrada: el menú se ve completo con barras negras).
 - **Pistas de audio** (original y doblajes: español, inglés, portugués, japonés, árabe) y **subtítulos**.
 - **Teclado en pantalla** con sugerencias y teclado árabe.
 - **Idiomas de la app**: español, inglés, portugués, japonés y árabe. **Región** seleccionable.
@@ -89,6 +91,6 @@ Licencias de terceros: ver [THIRD_PARTY.md](THIRD_PARTY.md).
 
 ## English summary
 
-**TubeBox360** is an unofficial homebrew YouTube client for modded Xbox 360 consoles (RGH/JTAG), written in C89 with the Xbox 360 XDK. It plays H.264 video (up to 1080p30 / 720p60) through the console's hardware decoder and talks HTTPS directly (mbedTLS, certificate-verified) — no PC proxy needed. Features: YouTube TV–style grid UI, audio tracks and subtitles, 5 UI languages, selectable region, optional Google sign-in (device code) for subscriptions, likes and subscribing, community recommendations, live user counter, update notifier, 3D avatar, and built-in network test / error report.
+**TubeBox360** is an unofficial homebrew YouTube client for modded Xbox 360 consoles (RGH/JTAG), written in C89 with the Xbox 360 XDK. It plays H.264 video (up to 1080p30 / 720p60) through the console's hardware decoder and talks HTTPS directly (mbedTLS, certificate-verified) — no PC proxy needed. Features: YouTube TV–style grid UI, live streams (HLS), 16:9 / 4:3 screen modes, audio tracks and subtitles, 5 UI languages, selectable region, optional Google sign-in (device code) for subscriptions, likes and subscribing, community recommendations, live user counter, update notifier, 3D avatar, and built-in network test / error report.
 
 Not affiliated with YouTube, Google or Microsoft. The Xbox 360 XDK is not included. Licensed under the GPL v3.

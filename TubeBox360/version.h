@@ -2,10 +2,10 @@
 #ifndef TB_VERSION_H
 #define TB_VERSION_H
 
-#define TB_VERSION   "1.00"
+#define TB_VERSION   "1.1"
 /* Numero de version para el aviso de actualizacion: 100 = 1.00, 101 = 1.01...
  * Subelo en cada version que publiques (y el "build" de Firebase igual). */
-#define TB_BUILD     100
+#define TB_BUILD     110
 
 /* TB_BETA 1 = version para usuarios (la que se publica): sin archivos de
  * depuracion (debug_*.json) ni las pruebas de desarrollo de la pantalla de

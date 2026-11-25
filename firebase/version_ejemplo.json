@@ -1,9 +1,10 @@
 {
   "version": {
-    "build": 101,
-    "v": "1.01",
-    "notas": "Que trae esta version",
+    "build": 110,
+    "v": "1.1",
+    "notas": "Videos en vivo, pantalla 4:3, 50 resultados por seccion y menos atascos en 1080p.",
     "xex": "https://drive.google.com/file/d/AQUI_EL_ID/view?usp=sharing",
-    "size": 21534720
+    "size": 21534720,
+    "url": "https://github.com/deadplayerssuportt-glitch/TubeBox360/releases/tag/v1.1"
   }
 }
